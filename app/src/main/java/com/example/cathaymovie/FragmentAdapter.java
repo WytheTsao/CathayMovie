@@ -2,9 +2,7 @@ package com.example.cathaymovie;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentActivity;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
@@ -21,12 +19,12 @@ public class FragmentAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         switch (position){
             case 0:
-                return new BlankFragment();
+                return new IndexFragment();
 
             case 1:
-                return new BlankFragment2();
+                return new ComingFragment();
         }
-        return new BlankFragment();
+        return new IndexFragment();
     }
 
     @Override

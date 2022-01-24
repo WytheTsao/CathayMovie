@@ -1,6 +1,7 @@
 package com.example.cathaymovie;
 
 import android.content.Context;
+import android.util.Log;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -13,6 +14,7 @@ public class MovieModel {
     GetJson getJson;
     String movieData, fileName;
     ArrayList<String> movieNameList, movieTagList, movieEngNameList, movieTypeList, movieRunTime, movieComeOutDate, movieAbout;
+    StringBuilder stringBuilder;
 
 
     public MovieModel(String fileName, Context context) {
@@ -26,7 +28,7 @@ public class MovieModel {
         movieRunTime = new ArrayList<>();
         movieComeOutDate = new ArrayList<>();
         movieAbout = new ArrayList<>();
-        movieData = getJson.getJson(fileName, this.context);
+        movieData = getJson.getJson(fileName, context);
         getMovieInfo();
     }
 
@@ -59,9 +61,10 @@ public class MovieModel {
         return this.movieAbout;
     }
 
-    public void getMovieInfo() {
+    private void getMovieInfo() {
         try {
             JSONArray jsonArray = new JSONArray(movieData);
+            Log.e("array", jsonArray.length() + "");
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 movieNameList.add(jsonObject.getString("name"));
@@ -70,8 +73,14 @@ public class MovieModel {
                 movieAbout.add(jsonObject.getString("about"));
                 movieRunTime.add(jsonObject.getString("runTime"));
                 movieComeOutDate.add(jsonObject.getString("comeOutDate"));
-                JSONArray tag = jsonObject.getJSONArray("tags");
-                movieTagList.add(tag.toString());
+                Log.e("tags", jsonObject.getJSONArray("tags").toString());
+                stringBuilder = new StringBuilder();
+                for (int j = 0; j < jsonObject.getJSONArray("tags").length(); j++) {
+                    stringBuilder.append(jsonObject.getJSONArray("tags").get(j));
+                    stringBuilder.append("\t");
+                }
+                movieTagList.add(stringBuilder.toString());
+
             }
         } catch (JSONException e) {
             e.printStackTrace();

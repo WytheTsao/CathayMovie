@@ -6,16 +6,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link BlankFragment2#newInstance} factory method to
+ * Use the {@link ComingFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class BlankFragment2 extends Fragment {
+public class ComingFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,7 +29,7 @@ public class BlankFragment2 extends Fragment {
     private RecyclerView recyclerView;
     private RecycleViewAdapter recycleViewAdapter;
 
-    public BlankFragment2() {
+    public ComingFragment() {
         // Required empty public constructor
     }
 
@@ -41,8 +42,8 @@ public class BlankFragment2 extends Fragment {
      * @return A new instance of fragment BlankFragment2.
      */
     // TODO: Rename and change types and number of parameters
-    public static BlankFragment2 newInstance(String param1, String param2) {
-        BlankFragment2 fragment = new BlankFragment2();
+    public static ComingFragment newInstance(String param1, String param2) {
+        ComingFragment fragment = new ComingFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -63,8 +64,9 @@ public class BlankFragment2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         inflater = getActivity().getLayoutInflater();
-        View view = inflater.inflate(R.layout.fragment_blank2, container, false);
+        View view = inflater.inflate(R.layout.fragment_coming, container, false);
         MovieModel movieModel = new MovieModel("comming.json",getContext());
+        Log.e("Movie Name",movieModel.getMovieName().toString());
         recyclerView = view.findViewById(R.id.movie_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recycleViewAdapter = new RecycleViewAdapter(movieModel);

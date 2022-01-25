@@ -2,6 +2,7 @@ package com.example.cathaymovie;
 
 import android.os.Bundle;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -65,12 +66,18 @@ public class ComingFragment extends Fragment {
                              Bundle savedInstanceState) {
         inflater = getActivity().getLayoutInflater();
         View view = inflater.inflate(R.layout.fragment_coming, container, false);
-        MovieModel movieModel = new MovieModel("comming.json",getContext());
-        Log.e("Movie Name",movieModel.getMovieName().toString());
         recyclerView = view.findViewById(R.id.movie_list);
+
+        return view;
+    }
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        MovieModel movieModel = new MovieModel("comming.json", getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recycleViewAdapter = new RecycleViewAdapter(movieModel);
         recyclerView.setAdapter(recycleViewAdapter);
-        return view;
+
     }
 }

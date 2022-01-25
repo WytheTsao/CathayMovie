@@ -61,6 +61,8 @@ public class MovieModel {
         return this.movieAbout;
     }
 
+
+
     private void getMovieInfo() {
         try {
             JSONArray jsonArray = new JSONArray(movieData);

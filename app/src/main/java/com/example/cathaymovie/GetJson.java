@@ -2,10 +2,16 @@ package com.example.cathaymovie;
 
 import android.content.Context;
 import android.content.res.AssetManager;
+import android.util.Log;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class GetJson {
     StringBuilder stringBuilder;
@@ -23,6 +29,10 @@ public class GetJson {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+
         return stringBuilder.toString();
     }
+
+
 }

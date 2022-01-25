@@ -30,9 +30,6 @@ public class GetJson {
             e.printStackTrace();
         }
 
-
         return stringBuilder.toString();
     }
-
-
 }

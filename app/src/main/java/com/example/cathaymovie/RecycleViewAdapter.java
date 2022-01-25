@@ -48,7 +48,7 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        try {
+//        try {
             Log.e("movie size", movieModel.getMovieName().size() + "");
             holder.movieComeOutDay.setText(movieModel.getMovieComeOutDate().get(position));
             holder.movieName.setText(movieModel.getMovieName().get(position));
@@ -59,13 +59,11 @@ public class RecycleViewAdapter extends RecyclerView.Adapter<RecycleViewAdapter.
                 holder.movieTag.setText(" ");
             }else {
                 holder.movieTag.setText(movieModel.getMovieTag().get(position));
-
             }
 
-
-        } catch (Exception e) {
-            Log.e("error", e.toString());
-        }
+//        } catch (Exception e) {
+//            Log.e("error", e.toString());
+//        }
 
         cardView.setOnLongClickListener(v -> {
             int position1 = holder.getAdapterPosition();

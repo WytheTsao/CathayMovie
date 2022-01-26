@@ -7,12 +7,9 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-import com.google.gson.Gson;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -31,7 +28,7 @@ public class ComingFragment extends Fragment {
     private String mParam2;
     private RecyclerView recyclerView;
     private RecycleViewAdapter recycleViewAdapter;
-    private GetJson getJson;
+    private ReadFile readFile;
 
     public ComingFragment() {
         // Required empty public constructor
@@ -78,8 +75,8 @@ public class ComingFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        getJson = new GetJson();
-        recycleViewAdapter = new RecycleViewAdapter(getJson.getJson("comming.json", getContext()));
+        readFile = new ReadFile("comming.json", getContext());
+        recycleViewAdapter = new RecycleViewAdapter(readFile.getJson());
         recyclerView.setAdapter(recycleViewAdapter);
 
     }

@@ -12,14 +12,21 @@ import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class GetJson {
+public class ReadFile {
 
     private StringBuilder stringBuilder;
     private Gson gson;
     private Type type;
     private ArrayList<MovieModel> movieModelList;
+    private String fileName;
+    private Context context;
 
-    public ArrayList<MovieModel> getJson(String fileName, Context context) {
+    public ReadFile(String fileName, Context context) {
+        this.fileName = fileName;
+        this.context = context;
+    }
+
+    public ArrayList<MovieModel> getJson() {
 
         gson = new Gson();
         stringBuilder = new StringBuilder();

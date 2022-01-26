@@ -11,12 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link IndexFragment#newInstance} factory method to
@@ -35,7 +29,7 @@ public class IndexFragment extends Fragment {
     private String mParam2;
     private RecyclerView recyclerView;
     private RecycleViewAdapter recycleViewAdapter;
-    GetJson getJson;
+    private ReadFile readFile;
 
     public IndexFragment() {
         // Required empty public constructor
@@ -66,8 +60,6 @@ public class IndexFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
-
     }
 
     @Override
@@ -83,8 +75,8 @@ public class IndexFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        getJson = new GetJson();
-        recycleViewAdapter = new RecycleViewAdapter(getJson.getJson("index.json",getContext()));
+        readFile = new ReadFile("index.json", getContext());
+        recycleViewAdapter = new RecycleViewAdapter(readFile.getJson());
         recyclerView.setAdapter(recycleViewAdapter);
 
     }

@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.gson.Gson;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link ComingFragment#newInstance} factory method to
@@ -29,6 +31,7 @@ public class ComingFragment extends Fragment {
     private String mParam2;
     private RecyclerView recyclerView;
     private RecycleViewAdapter recycleViewAdapter;
+    private GetJson getJson;
 
     public ComingFragment() {
         // Required empty public constructor
@@ -74,9 +77,9 @@ public class ComingFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        MovieModel movieModel = new MovieModel("comming.json", getContext());
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recycleViewAdapter = new RecycleViewAdapter(movieModel);
+        getJson = new GetJson();
+        recycleViewAdapter = new RecycleViewAdapter(getJson.getJson("comming.json", getContext()));
         recyclerView.setAdapter(recycleViewAdapter);
 
     }

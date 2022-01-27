@@ -24,11 +24,11 @@ public class ComingFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-    private RecyclerView recyclerView;
-    private RecycleViewAdapter recycleViewAdapter;
-    private ReadFile readFile;
+    public String mParam1;
+    public String mParam2;
+    public RecyclerView recyclerView;
+    public RecycleViewAdapter recycleViewAdapter;
+    public ReadFile readFile;
 
     public ComingFragment() {
         // Required empty public constructor

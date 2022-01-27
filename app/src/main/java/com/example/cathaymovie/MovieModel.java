@@ -3,7 +3,7 @@ package com.example.cathaymovie;
 
 public class MovieModel {
 
-    private String about, name, engName, runTime, type, comeOutDate;
+    public String about, name, engName, runTime, type, comeOutDate;
 
     public String getName() {
         return name;

@@ -9,9 +9,9 @@ import android.os.Bundle;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
-    TabLayout tabLayout;
-    ViewPager2 viewPager2;
-    FragmentAdapter fragmentAdapter;
+    public TabLayout tabLayout;
+    public ViewPager2 viewPager2;
+    public FragmentAdapter fragmentAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

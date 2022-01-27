@@ -25,11 +25,11 @@ public class IndexFragment extends Fragment {
 
 
     // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-    private RecyclerView recyclerView;
-    private RecycleViewAdapter recycleViewAdapter;
-    private ReadFile readFile;
+    public String mParam1;
+    public String mParam2;
+    public RecyclerView recyclerView;
+    public RecycleViewAdapter recycleViewAdapter;
+    public ReadFile readFile;
 
     public IndexFragment() {
         // Required empty public constructor

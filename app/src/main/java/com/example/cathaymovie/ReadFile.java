@@ -11,15 +11,16 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ReadFile {
 
-    private StringBuilder stringBuilder;
-    private Gson gson;
-    private Type type;
-    private ArrayList<MovieModel> movieModelList;
-    private String fileName;
-    private Context context;
+    public StringBuilder stringBuilder;
+    public Gson gson;
+    public Type type;
+    public ArrayList<MovieModel> movieModelList;
+    public String fileName;
+    public Context context;
 
     public ReadFile(String fileName, Context context) {
         this.fileName = fileName;

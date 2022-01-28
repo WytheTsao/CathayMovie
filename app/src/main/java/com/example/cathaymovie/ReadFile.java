@@ -15,12 +15,12 @@ import java.util.HashMap;
 
 public class ReadFile {
 
-    public StringBuilder stringBuilder;
-    public Gson gson;
-    public Type type;
-    public ArrayList<MovieModel> movieModelList;
-    public String fileName;
-    public Context context;
+    private StringBuilder stringBuilder;
+    private Gson gson;
+    private Type type;
+    private ArrayList<MovieModel> movieModelList;
+    private String fileName;
+    private Context context;
 
     public ReadFile(String fileName, Context context) {
         this.fileName = fileName;

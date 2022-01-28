@@ -23,8 +23,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentAdapter = new FragmentAdapter(fragmentManager, getLifecycle());
         viewPager2.setAdapter(fragmentAdapter);
-        tabLayout.addTab(tabLayout.newTab().setText("熱映中"));
-        tabLayout.addTab(tabLayout.newTab().setText("即將上映"));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.hot_movie));
+        tabLayout.addTab(tabLayout.newTab().setText(R.string.comming_movie));
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {

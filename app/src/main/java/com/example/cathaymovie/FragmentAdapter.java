@@ -1,5 +1,7 @@
 package com.example.cathaymovie;
 
+import android.content.Context;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -7,7 +9,6 @@ import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
 public class FragmentAdapter extends FragmentStateAdapter {
-
 
     public FragmentAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle) {
         super(fragmentManager, lifecycle);
@@ -17,14 +18,13 @@ public class FragmentAdapter extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        switch (position){
+        switch (position) {
             case 0:
-                return new IndexFragment();
-
+                return new PageFragment("index.json");
             case 1:
-                return new ComingFragment();
+                return new PageFragment("comming.json");
         }
-        return new IndexFragment();
+        return new PageFragment("index.json");
     }
 
     @Override

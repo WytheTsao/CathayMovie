@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardElevation="5dp"
-        android:layout_margin="5dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+    app:cardElevation="5dp"
+    android:layout_margin="5dp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -26,9 +21,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Movie Name"
+                tool:text="Movie Name"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -37,9 +32,9 @@
                 android:id="@+id/run_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="run time"
-                android:layout_margin="5dp"
-                app:layout_constraintBottom_toTopOf="@+id/movie_tag"
+                tool:text="run time"
+                android:layout_margin="5sp"
+                app:layout_constraintBottom_toTopOf="@id/movie_tag"
                 app:layout_constraintEnd_toEndOf="parent" />
 
             <TextView
@@ -48,45 +43,43 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:gravity="center_horizontal|center_vertical"
-                android:text="Movie Eng Name"
-                android:textSize="12dp"
+                tool:text="Movie Eng Name"
+                android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movie_name" />
+                app:layout_constraintTop_toBottomOf="@id/movie_name" />
 
             <TextView
                 android:id="@+id/movie_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Movie Type"
-                android:textSize="14dp"
+                tool:text="Movie Type"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movie_eng_name" />
+                app:layout_constraintTop_toBottomOf="@id/movie_eng_name" />
 
             <TextView
                 android:id="@+id/movie_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="Movie Tag"
-                android:textSize="14dp"
+                tool:text="Movie Tag"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/movie_eng_name" />
+                app:layout_constraintTop_toBottomOf="@id/movie_eng_name" />
 
             <TextView
                 android:id="@+id/movie_come_out_day"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="5dp"
-                android:text="2022/01/01"
-                android:textSize="14dp"
+                tool:text="2022/01/01"
+                android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/movie_tag"
-                app:layout_constraintStart_toStartOf="@+id/movie_type" />
+                app:layout_constraintStart_toStartOf="@id/movie_type" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-    </androidx.cardview.widget.CardView>
-</androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.cardview.widget.CardView>
